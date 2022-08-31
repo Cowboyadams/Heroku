@@ -3,7 +3,7 @@ from flask import (
 )
 
 from task_list import db
-from task_list.models import Task
+from task_list.models import Songs
 
 bp = Blueprint('task_list', __name__)
 
