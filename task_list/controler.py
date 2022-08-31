@@ -7,12 +7,13 @@ from task_list.models import Songs
 
 bp = Blueprint('task_list', __name__)
 
-@bp.route('/', methods=('GET', 'POST'))
-def index():
-    if request.method == 'GET':
-        songs = "zoowee"
 
-        return render_template('task_list/index.html')
-    else:
-        return render_template('task_list/index.html')
+app = Flask(__name__)
 
+
+@app.route("/")
+def welcome():
+    return render_template(
+        "index.html",
+        test="wow this is crazy"
+        )
