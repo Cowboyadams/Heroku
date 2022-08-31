@@ -22,5 +22,5 @@ def create_app():
 
     from . import controler
     app.register_blueprint(controler.bp)
-
+    
     return app
