@@ -3,17 +3,16 @@ from flask import (
 )
 
 from task_list import db
-from task_list.models import Songs
+from task_list.models import Song
 
 bp = Blueprint('task_list', __name__)
 
+@bp.route('/', methods=('GET', 'POST'))
+def index():
+    if request.method == 'GET':
+        
 
-app = Flask(__name__)
+        return render_template('task_list/index.html')
+    else:
+        return render_template('task_list/index.html')
 
-
-@app.route("/")
-def welcome():
-    return render_template(
-        "index.html",
-        test="wow this is crazy"
-        )
