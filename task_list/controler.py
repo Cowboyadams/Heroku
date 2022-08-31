@@ -10,7 +10,7 @@ bp = Blueprint('task_list', __name__)
 @bp.route('/', methods=('GET', 'POST'))
 def index():
     if request.method == 'GET':
-        
+        test = "wow this is crazy"
         return render_template('index.html')
     else:
         return render_template('index.html')
