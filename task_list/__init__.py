@@ -24,3 +24,7 @@ def create_app():
     app.register_blueprint(controler.bp)
 
     return app
+
+if __name__ == '__main__':
+        # Production
+        app.run_server(debug=True)
