@@ -6,6 +6,7 @@ from flask_migrate import Migrate
 db = SQLAlchemy()
 migrate = Migrate()
 
+
 def create_app():
     app = Flask(__name__)
     app.config.from_mapping(
@@ -19,5 +20,8 @@ def create_app():
     migrate.init_app(app, db)
 
     from . import models
+
+    from . import controler
+    app.register_blueprint(controler.bp)
 
     return app
