@@ -11,8 +11,7 @@ bp = Blueprint('task_list', __name__)
 def index():
     if request.method == 'GET':
         
-
-        return render_template('task_list/index.html')
+        return render_template('index.html')
     else:
-        return render_template('task_list/index.html')
+        return render_template('index.html')
 
