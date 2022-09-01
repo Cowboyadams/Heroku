@@ -10,15 +10,18 @@
 <body>
     <div class="top-flexbox-container">
         <div class="welcome">
-            <h1>Welcome to te weather song thing</h1>
+            <h1>Welcome to the weather song thing</h1>
             <h2>this section will give you details about things</h2>
         </div>
         <div class="zipcode-form-div">
+            <br>
             <p1> to get a song suggestion, insert your zip code below:</p1>
-            <form id="zipcode-form">
+            <form method="POST"  id="zipcode-form">
                 <input type="text" id="zipcode" name="zipcode">
                 <input type="submit" value="Submit" placeholder="Zipcode" id="zipbtn">
             </form>
+            <br>
+            <p1>your zipcode is {{ user_zipcode }}</p1>
         </div>
 
     </div>

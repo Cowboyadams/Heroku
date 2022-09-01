@@ -26,5 +26,4 @@ def create_app():
     return app
 
 if __name__ == '__main__':
-        # Production
         app.run_server(debug=True)
