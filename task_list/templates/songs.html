@@ -15,15 +15,24 @@
         </div>
         <div class="zipcode-form-div">
             <br>
-            <p1> To get a song suggestion, insert your zip code below:</p1>
+            <p1> to get a song suggestion at a different zipcode, insert the zip code below:</p1>
             <form method="POST"  id="zipcode-form">
                 <input type="text" id="zipcode" name="zipcode">
                 <input type="submit" value="Submit" placeholder="Zipcode" id="zipbtn">
             </form>
             <br>
+            <p1>the Website is using the current weather at {{ user_local }}</p1>
+            <br>
+            <p1>The date and time is {{ user_date }}</p1>
+            <br>
+            <p1>is it day? the value is {{ is_day }}</p1>
+            <br>
+            <p1>There is currently {{ cloud_percent }} percent of cloud coverage</p1>
+            <br>
+            <p1>the rain is currently {{ rain }} </p1>
         </div>
         <div>
-
+            
         </div>
     </div>
 </body>

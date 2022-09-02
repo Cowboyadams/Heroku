@@ -1,18 +1,36 @@
+import os
+from sys import set_coroutine_origin_tracking_depth
+from unicodedata import name
 from task_list import db
+from sqlalchemy import Column, String, Integer, create_engine
+from flask_sqlalchemy import SQLAlchemy
 
-class Songs(db.Model):
-    song_id = db.Column(db.Integer, autoincrement=True, primary_key=True)
-    name = db.Column(db.VARCHAR(50))
-    artist = db.Column(db.VARCHAR(50))
-    genre = db.Column(db.VARCHAR(50))
-    song_vibe = db.Column(db.Integer)
+db = SQLAlchemy()
+
+basedir = os.path.abspath(os.path.dirname(__file__))
+
+class Song(db.Model):
+    __tablename__ = 'Songs'
+    Song_id = db.Column(db.Integer, autoincrement=True, primary_key=True)
+    Name = db.Column(db.VARCHAR(50))
+    Artist = db.Column(db.VARCHAR(50))
+    Genre = db.Column(db.VARCHAR(50))
+    Spotify_api = db.Column(db.VARCHAR(250))
+    Vibe = db.Column(db.Integer)
+
+    def __init__(self,name,artist,genre,link,vibe):
+        self.Name = name
+        self.Artist = artist
+        self.Genre = genre
+        self.Spotify_api = link
+        self.Vibe = vibe
+
+
 
     def __repr__(self):
-        return '<Task: {}>'.format(self.name)
+        return f"the vibe is{name}"
 
-class Weather(db.Model):
-    weather_id = db.Column(db.Integer, autoincrement=True, primary_key=True)
-    song_vibe = db.Column(db.Integer)
 
-    def __repr__(self):
-        return '<Task: {}>'.format(self.name)
+def get_link():
+    text = 'SELECT "spotify_api", "Vibe" FROM public."public.Song" Where "Vibe" = 2'
+    return(text)
