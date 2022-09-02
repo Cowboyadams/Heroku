@@ -58,7 +58,6 @@ def index():
 #       Getting Database info
         result = Song.query.filter(Song.Vibe==vibe_num).first()
 
-        
 #       Making reference string
         
         string_result = result.Spotify_api
@@ -66,7 +65,6 @@ def index():
         print(string_result)
         
         ref = string_result
-        
         
         return render_template(
             'songs.html',

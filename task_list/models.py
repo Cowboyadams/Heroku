@@ -6,7 +6,6 @@ from sqlalchemy import Column, String, Integer, create_engine
 from flask_sqlalchemy import SQLAlchemy
 
 
-
 db = SQLAlchemy()
 
 basedir = os.path.abspath(os.path.dirname(__file__))
