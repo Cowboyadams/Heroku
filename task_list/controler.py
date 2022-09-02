@@ -1,5 +1,6 @@
 from os import curdir
 import os
+from re import S
 from flask import (
     Blueprint, flash, redirect, render_template, request, url_for
 )
@@ -14,9 +15,6 @@ from .vibecheck import vibecheck
 bp = Blueprint('task_list', __name__)
 app = Flask(__name__)
 sql = SQLAlchemy(app)
-
-
-
 
 
 
@@ -55,13 +53,19 @@ def index():
 #       Vibecheck ---------------------------------------------------------------------------------------------------------------------------------------------
         
         vibe_num = vibecheck()
-        string_vibe = str(vibe_num)
-        print(string_vibe)
+        
         
 #       Getting Database info
+        result = Song.query.filter(Song.Vibe==vibe_num).first()
 
         
+#       Making reference string
         
+        string_result = result.Spotify_api
+        
+        print(string_result)
+        
+        ref = string_result
         
         
         return render_template(
@@ -72,6 +76,7 @@ def index():
             is_day=is_day,
             cloud_percent=cloud_percent,
             rain=rain,
-            user_date=user_date
+            user_date=user_date,
+            ref=ref
             )
 

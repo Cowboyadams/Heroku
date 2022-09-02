@@ -1,3 +1,4 @@
+
 # Variables that you can work with:
 #   User_local (local City)(string)
 #   is_day (if it is day) (int, either 1 for true or 0 for false)
