@@ -38,11 +38,14 @@ def index():
         weather_api = ('http://api.weatherapi.com/v1/forecast.json?key=6e399ba00ff24135ae584519223108&q=' + user_zipcode + '&days=1&aqi=no&alerts=no')
         weather_req = requests.get(weather_api)
         weather_res = weather_req.json()
+        print(weather_res)
+        if "error" in weather_res:
+                flash("Improper input, Try another zipcode")
+                return (render_template('index.html'))
         weather_res_text = weather_req.text
         print("the weather api results are: \n" + weather_res_text + "\n")
 
 #       Declaring Variables -----------------------------------------------------------------------------------------------------------------------------------
-
         user_local = weather_res["location"]["name"]
         user_date = weather_res["location"]["localtime"]
         is_day = weather_res["current"]["is_day"]
@@ -50,7 +53,7 @@ def index():
         rain = weather_res["current"]["precip_in"]
         uv = weather_res["current"]["uv"]
         info = [user_local, user_date, is_day, cloud_percent, rain, uv]
-
+        
 #       Vibecheck ---------------------------------------------------------------------------------------------------------------------------------------------
         print(info)
         print(info[4])

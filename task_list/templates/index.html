@@ -8,6 +8,7 @@
     <title>Weather Song</title>
 </head>
 <body>
+    
     <div class="top-flexbox-container">
         <div class="welcome">
             <h1 id="welcome">Welcome to WeatherSong</h1>
@@ -20,6 +21,9 @@
                 <input type="text" id="zipcode" name="zipcode">
                 <input type="submit" value="Submit" placeholder="Zipcode" id="zipbtn">
             </form>
+            {% for mesg in get_flashed_messages() %}
+            <center><p2>{{ mesg }}</p2></center>
+            {% endfor %}
             <br>
         </div>
         <div>
