@@ -51,8 +51,10 @@ def index():
         info = [user_local, user_date, is_day, cloud_percent, rain, uv]
 
 #       Vibecheck ---------------------------------------------------------------------------------------------------------------------------------------------
-        
-        vibe_num = vibecheck()
+        print(info)
+        print(info[4])
+        print(type(info[4]))
+        vibe_num = vibecheck(info)
         
         
 #       Getting Database info

@@ -14,8 +14,14 @@
 
 
 # Decides what the current vibe is
-def vibecheck():
-    
-    answer_vibe = 2
-    return(answer_vibe)
+def vibecheck(info):
+    if info[4] > 0.01:
+        answer_vibe = 4
+        return(answer_vibe)
+    elif info[3] > 40:
+        answer_vibe = 1
+        return(answer_vibe)
+    else:
+        answer_vibe = 2
+        return(answer_vibe)
 
