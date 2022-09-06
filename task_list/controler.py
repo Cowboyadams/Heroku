@@ -4,6 +4,7 @@ from re import S
 from flask import (
     Blueprint, flash, redirect, render_template, request, url_for
 )
+import random
 from flask import Flask
 import requests
 from task_list import db
@@ -66,10 +67,15 @@ def index():
         elif vibe_num == 4:
                 explain = "Because of the rain that is currently present in your area"
 
-#       Getting Database info
-        result = Song.query.filter(Song.Vibe==vibe_num).first()
-
-#       Making reference string
+#       Getting Database info ---------------------------------------------------------------------------------------------------------------------
+        query = Song.query.filter(Song.Vibe==vibe_num).all()
+        print(query)
+        print(type(query))
+        num = random.randrange(0,2)
+        print(num)
+        result = query[num]
+        print(result)
+#       Making reference string -------------------------------------------------------------------------------------------------------------------------
         
         string_result = result.Spotify_api
         
