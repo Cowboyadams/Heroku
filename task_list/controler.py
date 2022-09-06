@@ -56,7 +56,16 @@ def index():
         print(type(info[4]))
         vibe_num = vibecheck(info)
         
-        
+#       Explaination ------------------------------------------------------------------------------------------------------------------------------------------        
+        if vibe_num == 1:
+                explain = "Because there are a lot of clouds in the sky"
+        elif vibe_num == 2:
+                explain = "Because there is mostly clear skies and a higher UV index"
+        elif vibe_num == 3:
+                explain = "We recommend listening to Christmas songs right now"
+        elif vibe_num == 4:
+                explain = "Because of the rain that is currently present in your area"
+
 #       Getting Database info
         result = Song.query.filter(Song.Vibe==vibe_num).first()
 
@@ -77,6 +86,7 @@ def index():
             cloud_percent=cloud_percent,
             rain=rain,
             user_date=user_date,
-            ref=ref
+            ref=ref,
+            explain=explain
             )
 

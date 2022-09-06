@@ -9,21 +9,31 @@
 }
 
 .welcome {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
     justify-content: space-between;
     text-align: center;
+    background-color: #A7C7F1;
 }
 
 .zipcode-form-div {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
     justify-content: space-between;
     text-align: center;
+    background-color: #A7C7F1;
 }
 
-.music-results{
-    
+.music_results {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    text-align: center;
+    background-color: #A7C7F1;
 }
