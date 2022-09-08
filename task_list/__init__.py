@@ -6,12 +6,12 @@ from flask_migrate import Migrate
 db = SQLAlchemy()
 migrate = Migrate()
 
+
 def create_app():
     app = Flask(__name__)
     app.config.from_mapping(
         SECRET_KEY = os.environ.get('SECRET_KEY') or 'dev_key',
-        SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL') or \
-            'sqlite:///' + os.path.join(app.instance_path, 'task_list.sqlite'),
+        SQLALCHEMY_DATABASE_URI = "postgres://lbyxwmuqvbndrv:948908345954624da81b9a539c830d5122aff868c7f927efc3ce5e5a2bf31350@ec2-44-205-63-142.compute-1.amazonaws.com:5432/df6ube44s5bk3",
         SQLALCHEMY_TRACK_MODIFICATIONS = False
     )
 
@@ -20,4 +20,11 @@ def create_app():
 
     from . import models
 
+    from . import controler
+    app.register_blueprint(controler.bp)
+
     return app
+
+if __name__ == '__main__':
+        # Production
+        app.run_server(debug=True)
